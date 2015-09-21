@@ -13,7 +13,7 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     TokenIssuer.expire_token(current_user, request) if current_user
-    render status: :ok, json: ''
+    head :no_content
   end
 
   private
