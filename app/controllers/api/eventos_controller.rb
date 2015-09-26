@@ -5,6 +5,10 @@ class Api::EventosController < ApplicationController
   def index
     @eventos = Evento.find_by(owner: current_user)
 
+    if(@eventos.nil? )
+      @eventos =  {"eventos" => []}
+    end
+
     render json: @eventos
   end
 

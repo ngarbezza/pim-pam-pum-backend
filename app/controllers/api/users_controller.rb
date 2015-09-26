@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
     if (user.save)
       render status: :ok, json: ''
     else
-      render status: :error, json: user.errors.to_json
+      render status: 422, json: {'errors' => user.errors}.to_json
     end
 
   end
