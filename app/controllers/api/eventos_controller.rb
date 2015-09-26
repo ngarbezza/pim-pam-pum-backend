@@ -1,8 +1,9 @@
 class Api::EventosController < ApplicationController
   before_action :set_evento, only: [:show, :update, :destroy]
+  include WardenHelper
 
   def index
-    @eventos = Evento.all
+    @eventos = Evento.find_by(owner: current_user)
 
     render json: @eventos
   end

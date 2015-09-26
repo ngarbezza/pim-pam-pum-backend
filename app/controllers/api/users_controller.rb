@@ -3,15 +3,17 @@ class Api::UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    user.save()
 
-
-    render status: :ok, json: ''
+    if (user.save)
+      render status: :ok, json: ''
+    else
+      render status: :error, json: user.errors.to_json
+    end
 
   end
 
-  private
 
+  private
   def user_params
     params.require(:user).permit(:email, :password)
   end
