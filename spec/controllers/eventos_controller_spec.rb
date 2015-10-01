@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Api::EventosController, type: :controller do
 
+  let(:user) { User.create(email: 'user@example.com', password: 'password') }
+
   before do
-    user = User.create(email: 'user@example.com', password: 'password')
     authentication_token = AuthenticationToken.create(user_id: user.id, body: 'token', last_used_at: DateTime.current)
     request.env['HTTP_X_USER_EMAIL'] = user.email
     request.env['HTTP_X_AUTH_TOKEN'] = authentication_token.body
@@ -12,14 +13,14 @@ RSpec.describe Api::EventosController, type: :controller do
   it_behaves_like 'api_controller'
   it_behaves_like 'authenticated_api_controller'
 
-  let(:valid_attributes) { { nombre: 'Juntada', descripcion: 'Algo', fecha: DateTime.current } }
+  let(:valid_attributes) { { nombre: 'Juntada', descripcion: 'Algo', fecha: DateTime.current, owner: user } }
   let(:invalid_attributes) { { nombre: nil, descripcion: 'john.doe@example.com', fecha: "123456789" } }
   let!(:evento) { Evento.create(valid_attributes) }
 
   describe 'GET #index' do
     it 'asigna todos los eventos' do
       get :index
-      expect(assigns(:eventos)).to eq([evento])
+      expect(assigns(:eventos)).to eq(evento)
     end
   end
 
