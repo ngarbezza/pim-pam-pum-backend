@@ -3,11 +3,7 @@ class Api::EventosController < ApplicationController
   include WardenHelper
 
   def index
-    @eventos = Evento.find_by(owner: current_user)
-
-    if(@eventos.nil? )
-      @eventos =  {"eventos" => []}
-    end
+    @eventos = Evento.where(owner: current_user)
 
     render json: @eventos
   end
