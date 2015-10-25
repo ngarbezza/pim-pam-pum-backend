@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::SessionsController, type: :controller do
 
-  let!(:user) { User.create(email: 'user@example.com', password: 'password') }
+  let!(:user) { User.create(username: 'user', email: 'user@example.com', password: 'password') }
   let!(:authentication_token) { AuthenticationToken.create(user_id: user.id, body: 'token', last_used_at: DateTime.current) }
   let(:valid_attributes) { { user: { email: user.email, password: 'password' } } }
   let(:invalid_attributes) { { user: { email: user.email, password: 'not-the-right-password' } } }
