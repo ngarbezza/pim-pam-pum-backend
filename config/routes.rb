@@ -4,7 +4,12 @@ Rails.application.routes.draw do
     resource :sessions, only: [:create, :destroy]
     resources :eventos
     resources :users, only: [:create]
-    resources :invitaciones, only: [:index]
+    resources :invitaciones, only: [:index] do
+      member do
+        put :aceptar
+        put :rechazar
+      end
+    end
   end
 
   match '/*path', to: proc {
