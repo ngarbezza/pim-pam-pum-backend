@@ -1,6 +1,5 @@
 class Api::EventosController < ApplicationController
   before_action :set_evento, only: [:show, :update, :destroy]
-  include WardenHelper
 
   def index
     @eventos = Evento.where(owner: current_user)
