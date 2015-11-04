@@ -3,6 +3,17 @@ module Api
 
     before_action :cargar_invitacion, only: [:aceptar, :rechazar]
 
+    def invitar
+      params[:nombres_de_usuario].each do |nombre_de_usuario|
+        evento = Evento.find_by(id: params[:id_evento])
+        usuario = User.find_by(username: nombre_de_usuario)
+        if evento.present? && usuario.present?
+          Invitacion.create! evento: evento, usuario: usuario
+          InvitacionMailer.nueva_invitacion(current_user, evento, usuario).deliver_later
+        end
+      end
+    end
+
     def index
       invitaciones = Invitacion.where(user: current_user).map { |invitacion| invitacion_response(invitacion) }
 

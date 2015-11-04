@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :eventos
     resources :users, only: [:create]
     resources :invitaciones, only: [:index] do
+      collection do
+        post :invitar
+      end
       member do
         put :aceptar
         put :rechazar
