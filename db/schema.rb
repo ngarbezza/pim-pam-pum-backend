@@ -45,11 +45,6 @@ ActiveRecord::Schema.define(version: 20151103183451) do
   add_index "invitaciones", ["evento_id"], name: "index_invitaciones_on_evento_id"
   add_index "invitaciones", ["user_id"], name: "index_invitaciones_on_user_id"
 
-  create_table "invitacions", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
