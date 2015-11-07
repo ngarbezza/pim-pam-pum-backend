@@ -8,6 +8,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'has_secure_token'
 gem 'warden'
 gem 'rollbar', '~> 2.4.0'
+gem 'yahoo_weather'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'

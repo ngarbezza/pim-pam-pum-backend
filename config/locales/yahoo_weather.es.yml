@@ -1,0 +1,69 @@
+es:
+  yahoo_weather:
+    wind:
+      n: N
+      nne: NNE
+      ne: NE
+      ene: ENE
+      e: E
+      ese: ESE
+      se: SE
+      sse: SSE
+      s: S
+      ssw: SSO
+      sw: SO
+      wsw: OSO
+      w: O
+      wnw: ONO
+      nw: NO
+      nnw: NNO
+    code:
+      '0': 'Tornado'
+      '1': 'Tormenta tropical'
+      '2': 'Huracán'
+      '3': 'Tormentas severas'
+      '4': 'Tormentas eléctricas'
+      '5': 'Mixed rain and snow'
+      '6': 'Mixed rain and sleet'
+      '7': 'Mixed snow and sleet'
+      '8': 'Freezing drizzle'
+      '9': 'Drizzle'
+      '10': 'Freezing rain'
+      '11': 'Showers'
+      '12': 'Showers'
+      '13': 'Snow flurries'
+      '14': 'Light snow showers'
+      '15': 'Blowing snow'
+      '16': 'Snow'
+      '17': 'Hail'
+      '18': 'Sleet'
+      '19': 'Dust'
+      '20': 'Foggy'
+      '21': 'Haze'
+      '22': 'Smoky'
+      '23': 'Blustery'
+      '24': 'Ventoso'
+      '25': 'Frío'
+      '26': 'Nublado'
+      '27': 'Mayormente nublado (noche)'
+      '28': 'Mayormente nublado (día)'
+      '29': 'Parcialmente nublado (noche)'
+      '30': 'Parcialmente nublado (día)'
+      '31': 'Despejado (night)'
+      '32': 'Soleado'
+      '33': 'Despejado (night)'
+      '34': 'Despejado (day)'
+      '35': 'Mixed rain and hail'
+      '36': 'Caluroso'
+      '37': 'Isolated thunderstorms'
+      '38': 'Scattered thunderstorms'
+      '39': 'Scattered thunderstorms'
+      '40': 'Scattered showers'
+      '41': 'Heavy snow'
+      '42': 'Scattered snow showers'
+      '43': 'Heavy snow'
+      '44': 'Partly cloudy'
+      '45': 'Thundershowers'
+      '46': 'Snow showers'
+      '47': 'Isolated thundershowers'
+      '3200': 'Not available'

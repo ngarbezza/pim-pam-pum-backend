@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         put :rechazar
       end
     end
+    get 'clima', to: 'clima#show'
   end
 
   match '/*path', to: proc {

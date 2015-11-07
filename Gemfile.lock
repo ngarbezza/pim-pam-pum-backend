@@ -136,6 +136,8 @@ GEM
       thread_safe (~> 0.1)
     warden (1.2.3)
       rack (>= 1.0)
+    yahoo_weather (1.1.1)
+      rails (>= 3.1.0)
 
 PLATFORMS
   ruby
@@ -153,6 +155,7 @@ DEPENDENCIES
   spring
   sqlite3
   warden
+  yahoo_weather
 
 BUNDLED WITH
    1.10.6
