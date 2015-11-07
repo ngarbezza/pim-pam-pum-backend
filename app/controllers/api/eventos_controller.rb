@@ -13,6 +13,7 @@ class Api::EventosController < ApplicationController
 
   def create
     @evento = Evento.new(evento_params)
+    @evento.owner = current_user
 
     if @evento.save
       render json: @evento, status: :created, location: api_evento_url(@evento)
