@@ -6,14 +6,18 @@ user_simple = User.create!(username: 'simple', email: 'simple@pim-pam-pum.com', 
 juntada = Evento.create! nombre: 'Juntada',
                          descripcion: 'nos juntamos a jugar a la play',
                          fecha: 27.days.from_now,
+                         direccion: 'calle falsa 123',
                          owner: user_admin
+
 choripateada = Evento.create! nombre: 'Choripateada',
                               descripcion: 'parrillada con amigos',
                               fecha: 12.days.from_now,
+                              direccion: 'avenida siempreviva 742',
                               owner: user_admin
 cumple = Evento.create! nombre: 'Cumple',
                         descripcion: 'Los 27 de Rochi',
                         fecha: 1.month.from_now,
+                        direccion: 'mitre y las flores',
                         owner: user_simple
 
 # Invitaciones
