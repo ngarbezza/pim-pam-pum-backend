@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :sessions, only: [:create, :destroy]
     resources :eventos
     resources :users, only: [:create]
+    resources :invitados, only: [:index]
     resources :invitaciones, only: [:index] do
       collection do
         post :invitar

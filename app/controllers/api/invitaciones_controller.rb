@@ -4,8 +4,8 @@ module Api
     before_action :cargar_invitacion, only: [:aceptar, :rechazar]
 
     def invitar
+      evento = Evento.find_by(id: params[:id_evento])
       params[:nombres_de_usuario].each do |nombre_de_usuario|
-        evento = Evento.find_by(id: params[:id_evento])
         usuario = User.find_by(username: nombre_de_usuario)
         if evento.present? && usuario.present?
           Invitacion.create! evento: evento, usuario: usuario
@@ -15,19 +15,19 @@ module Api
     end
 
     def index
-      invitaciones = Invitacion.where(user: current_user).map { |invitacion| invitacion_response(invitacion) }
+      invitaciones = Invitacion.where(user: current_user).map(method(:invitacion_response))
 
       render json: { invitaciones: invitaciones }
     end
 
     def aceptar
-      @invitacion.update_attribute(:estado, Invitacion::ACEPTADA)
+      @invitacion.aceptar
 
       render json: wrapped_invitacion_response(@invitacion)
     end
 
     def rechazar
-      @invitacion.update_attribute(:estado, Invitacion::RECHAZADA)
+      @invitacion.rechazar
 
       render json: wrapped_invitacion_response(@invitacion)
     end
