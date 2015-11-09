@@ -7,7 +7,8 @@ module Api
       evento = Evento.find_by(id: params[:id_evento])
       params[:nombres_de_usuario].each do |nombre_de_usuario|
         usuario = User.find_by(username: nombre_de_usuario)
-        if evento.present? && usuario.present?
+        invitacion_existente = Invitacion.exists?(user: usuario, evento: evento)
+        if evento.present? && usuario.present? && !invitacion_existente
           Invitacion.create! evento: evento, user: usuario
           InvitacionMailer.nueva_invitacion(current_user, evento, usuario).deliver_later
         end
