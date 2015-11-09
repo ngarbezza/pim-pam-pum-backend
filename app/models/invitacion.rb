@@ -27,4 +27,12 @@ class Invitacion < ActiveRecord::Base
   def en_duda?
     estado == EN_DUDA
   end
+
+  def aceptar
+    update_attribute :estado, ACEPTADA
+  end
+
+  def rechazar
+    update_attribute :estado, RECHAZADA
+  end
 end
