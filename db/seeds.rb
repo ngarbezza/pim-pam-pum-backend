@@ -1,6 +1,7 @@
 # Usuarios
 user_admin = User.create!(username: 'admin', email: 'admin@pim-pam-pum.com', password: 'password')
 user_simple = User.create!(username: 'simple', email: 'simple@pim-pam-pum.com', password: 'password')
+user_nuevo = User.create!(username: 'nuevo', email: 'nuevo@pim-pam-pum.com', password: 'password')
 
 # Eventos
 juntada = Evento.create! nombre: 'Juntada',
@@ -17,6 +18,6 @@ cumple = Evento.create! nombre: 'Cumple',
                         owner: user_simple
 
 # Invitaciones
-Invitacion.create! user: user_admin, evento: juntada
+Invitacion.create! user: user_simple, evento: juntada
 Invitacion.create! user: user_simple, evento: choripateada
-Invitacion.create! user: user_simple, evento: cumple
+Invitacion.create! user: user_admin, evento: cumple

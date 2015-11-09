@@ -8,14 +8,14 @@ module Api
       params[:nombres_de_usuario].each do |nombre_de_usuario|
         usuario = User.find_by(username: nombre_de_usuario)
         if evento.present? && usuario.present?
-          Invitacion.create! evento: evento, usuario: usuario
+          Invitacion.create! evento: evento, user: usuario
           InvitacionMailer.nueva_invitacion(current_user, evento, usuario).deliver_later
         end
       end
     end
 
     def index
-      invitaciones = Invitacion.where(user: current_user).map(method(:invitacion_response))
+      invitaciones = Invitacion.where(user: current_user).map { |inv| invitacion_response(inv) }
 
       render json: { invitaciones: invitaciones }
     end
