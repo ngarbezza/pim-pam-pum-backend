@@ -13,7 +13,11 @@ RSpec.describe Api::EventosController, type: :controller do
   it_behaves_like 'api_controller'
   it_behaves_like 'authenticated_api_controller'
 
-  let(:valid_attributes) { { nombre: 'Juntada', descripcion: 'Algo', fecha: DateTime.current, owner: user } }
+  let(:valid_attributes) { { nombre: 'Juntada',
+                             descripcion: 'Algo',
+                             fecha: DateTime.current,
+                             owner: user,
+                             direccion: 'Calle Falsa 123' } }
   let(:invalid_attributes) { { nombre: nil, descripcion: 'john.doe@example.com', fecha: "123456789" } }
   let!(:evento) { Evento.create(valid_attributes) }
 
