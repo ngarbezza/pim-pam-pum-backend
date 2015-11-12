@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+</head>
+<body>
+<h1>¡Has sido invitad@ a <strong>"<%= @evento.nombre %>"</strong>!</h1>
+
+<p>
+    <%= @usuario.username %> (<%= @usuario.email %>), te invita a participar del evento
+    <strong>"<%= @evento.nombre %>"</strong> que se va a realizar el día <%= @evento.fecha %>.
+</p>
+
+<p>
+    Más información sobre el evento: <%= @evento.descripcion %>
+</p>
+
+<p>
+    No te olvides de ingresar a <a href="<%= ENV['PPP_URL'] %>/login">tu perfil</a> para aceptar
+    (o rechazar, buuuu, buuuu) la invitación.
+</p>
+
+<p>¡Que lo pases lindo!</p>
+
+<p>pim-pam-pum (tu evento en tres pasos)</p>
+</body>
+</html>

@@ -1,13 +1,8 @@
 class Api::EventosController < ApplicationController
   before_action :set_evento, only: [:show, :update, :destroy]
-  include WardenHelper
 
   def index
-    @eventos = Evento.find_by(owner: current_user)
-
-    if(@eventos.nil? )
-      @eventos =  {"eventos" => []}
-    end
+    @eventos = Evento.where(owner: current_user)
 
     render json: @eventos
   end
@@ -18,11 +13,12 @@ class Api::EventosController < ApplicationController
 
   def create
     @evento = Evento.new(evento_params)
+    @evento.owner = current_user
 
     if @evento.save
       render json: @evento, status: :created, location: api_evento_url(@evento)
     else
-      render json: @evento.errors, status: :unprocessable_entity
+      render status: 422, json: {errors: @evento.errors}.to_json
     end
   end
 
@@ -32,7 +28,7 @@ class Api::EventosController < ApplicationController
     if @evento.update(evento_params)
       head :no_content
     else
-      render json: @evento.errors, status: :unprocessable_entity
+      render status: 422, json: {errors: @evento.errors}.to_json
     end
   end
 
@@ -49,6 +45,6 @@ class Api::EventosController < ApplicationController
   end
 
   def evento_params
-    params.require(:evento).permit(:nombre, :descripcion, :fecha)
+    params.require(:evento).permit(:nombre, :descripcion, :fecha, :direccion)
   end
 end

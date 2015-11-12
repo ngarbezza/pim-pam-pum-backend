@@ -1,0 +1,13 @@
+¡Has sido invitad@ a "<%= @evento.nombre %>"!
+
+<%= @usuario.username %> (<%= @usuario.email %>), te invita a participar del
+evento "<%= @evento.nombre %>" que se va a realizar el día <%= @evento.fecha %>.
+
+Más información sobre el evento: <%= @evento.descripcion %>
+
+No te olvides de ingresar a tu perfil (<%= ENV['PPP_URL'] %>/login) para aceptar
+(o rechazar, buuuu, buuuu) la invitación.
+
+¡Que lo pases lindo!
+
+pim-pam-pum (tu evento en tres pasos)

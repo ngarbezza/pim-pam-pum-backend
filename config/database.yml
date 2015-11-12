@@ -20,11 +20,9 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-production:
+staging: &staging
   adapter: postgresql
-  encoding: unicode
-  database: d47fl2qlmgvc7b
-  username: kiirjumzntdvjg
-  password: m2PaonNrsqXrKOq_3I8wBlnD1b
-  host: ec2-54-83-25-238.compute-1.amazonaws.com
-  port: 5432
+  url: <%= ENV['DATABASE_URL'] %>
+
+production:
+  <<: *staging
