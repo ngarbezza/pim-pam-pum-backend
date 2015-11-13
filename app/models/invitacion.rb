@@ -12,6 +12,8 @@ class Invitacion < ActiveRecord::Base
 
   validates :estado, presence: true, inclusion: { in: ESTADOS }
 
+  scope :confirmadas, -> { where(estado: ACEPTADA) }
+
   def sin_confirmar?
     estado == SIN_CONFIRMAR
   end

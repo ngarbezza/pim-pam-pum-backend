@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resource :sessions, only: [:create, :destroy]
-    resources :eventos
+    resources :eventos do
+      member do
+        get :confirmados
+      end
+    end
     resources :users, only: [:create]
     resources :invitados, only: [:index]
     resources :invitaciones, only: [:index] do

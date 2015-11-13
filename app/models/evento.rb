@@ -4,4 +4,8 @@ class Evento < ActiveRecord::Base
   belongs_to :owner, class_name: User.name
   has_many :invitaciones, class_name: Invitacion.name
 
+  def confirmados
+    invitaciones.confirmadas
+  end
+
 end
