@@ -1,5 +1,5 @@
 class Api::EventosController < ApplicationController
-  before_action :set_evento, only: [:show, :update, :destroy]
+  before_action :set_evento, only: [:show, :update, :destroy, :confirmados]
 
   def index
     @eventos = Evento.where(owner: current_user)
@@ -38,7 +38,15 @@ class Api::EventosController < ApplicationController
     head :no_content
   end
 
+  def confirmados
+    render json: { confirmados: @evento.confirmados.map { |confirmado| invitacion_response(confirmado) } , evento: @evento}
+  end
+
   private
+
+  def invitacion_response(invitacion)
+    { id: invitacion.user.id, nombreUsuario: invitacion.user.username }
+  end
 
   def set_evento
     @evento = Evento.find(params[:id])
