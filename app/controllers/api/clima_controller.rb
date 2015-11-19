@@ -5,9 +5,9 @@ module Api
       client = YahooWeather::Client.new
       response = nil
       if params[:codigo_woeid]
-        response = client.fetch(params[:codigo_woeid])
+        response = client.fetch(params[:codigo_woeid], YahooWeather::Units::CELSIUS)
       elsif params[:nombre_de_ciudad]
-        response = client.fetch_by_location(params[:nombre_de_ciudad])
+        response = client.fetch_by_location(params[:nombre_de_ciudad], YahooWeather::Units::CELSIUS)
       else
         fail 'No se especificó ciudad o código de ciudad para obtener el clima'
       end
