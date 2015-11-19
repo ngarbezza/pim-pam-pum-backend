@@ -39,7 +39,7 @@ class Api::EventosController < ApplicationController
   end
 
   def confirmados
-    render json: { confirmados: @evento.confirmados.map { |confirmado| invitacion_response(confirmado) } }
+    render json: { confirmados: @evento.confirmados.map { |confirmado| invitacion_response(confirmado) } , evento: @evento}
   end
 
   private
