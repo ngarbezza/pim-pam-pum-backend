@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.4'
+ruby '2.6.6'
+
+gem 'rails', '4.2.11.1'
 gem 'rails-api'
-gem 'spring', :group => :development
-gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
+gem 'spring', group: :development
+gem 'active_model_serializers'
 gem 'bcrypt', '~> 3.1.7'
 gem 'has_secure_token'
+gem 'rubocop'
 gem 'warden'
 gem 'rollbar', '~> 2.4.0'
 gem 'yahoo_weather'
@@ -20,5 +23,3 @@ group :production, :staging do
   gem 'pg'
   gem 'rails_12factor'
 end
-
-ruby '2.2.2'
