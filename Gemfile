@@ -21,4 +21,4 @@ group :production, :staging do
   gem 'rails_12factor'
 end
 
-ruby '2.2.2'
+ruby '2.6.5'
