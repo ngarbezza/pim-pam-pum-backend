@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.11.1'
 gem 'rails-api'
 gem 'spring', :group => :development
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
@@ -21,4 +21,4 @@ group :production, :staging do
   gem 'rails_12factor'
 end
 
-ruby '2.2.2'
+ruby '2.6.5'
