@@ -14,7 +14,7 @@ gem 'rollbar', '~> 2.4.0'
 gem 'yahoo_weather'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 4.1'
   gem 'sqlite3'
   gem 'letter_opener'
 end
