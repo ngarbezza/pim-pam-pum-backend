@@ -10,7 +10,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'has_secure_token'
 gem 'rubocop'
 gem 'warden'
-gem 'rollbar', '~> 2.4.0'
+gem 'rollbar', '~> 3.4.0'
 gem 'yahoo_weather'
 
 group :development, :test do
