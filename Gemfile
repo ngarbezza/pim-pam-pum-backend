@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.6.6'
 
-gem 'rails', '4.2.11.1'
+gem 'rails', '6.1.7.3'
 gem 'rails-api'
 gem 'spring', group: :development
 gem 'active_model_serializers'
