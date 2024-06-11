@@ -44,7 +44,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     arel (6.0.4)
     ast (2.4.2)
-    bcrypt (3.1.18)
+    bcrypt (3.1.20)
     builder (3.2.4)
     case_transform (0.2)
       activesupport
@@ -192,7 +192,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
-  bcrypt (~> 3.1.18)
+  bcrypt (~> 3.1.20)
   has_secure_token
   letter_opener
   pg

@@ -6,7 +6,7 @@ gem 'rails', '4.2.11.1'
 gem 'rails-api'
 gem 'spring', group: :development
 gem 'active_model_serializers'
-gem 'bcrypt', '~> 3.1.18'
+gem 'bcrypt', '~> 3.1.20'
 gem 'has_secure_token'
 gem 'rubocop'
 gem 'warden'
